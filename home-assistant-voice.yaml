@@ -688,7 +688,7 @@ light:
           update_interval: 16ms
           lambda: |-
             static int8_t index = 0;
-            Color muted_color(255, 0, 0);
+            Color muted_color(50, 0, 0);
             auto light_color = id(led_ring).current_values;
             Color color(light_color.get_red() * 255, light_color.get_green() * 255,
                   light_color.get_blue() * 255);
@@ -803,7 +803,7 @@ light:
             auto light_color = id(led_ring).current_values;
             Color color(light_color.get_red() * 255, light_color.get_green() * 255,
                   light_color.get_blue() * 255);
-            Color muted_color(255, 0, 0);
+            Color muted_color(50, 0, 0);
             for (uint8_t i = 0; i < 12; i++) {
               it[i] = color * uint8_t(255/brightness_step_number*(brightness_step_number-brightness_step));
             }
@@ -826,7 +826,7 @@ light:
             auto light_color = id(led_ring).current_values;
             Color color(light_color.get_red() * 255, light_color.get_green() * 255,
                   light_color.get_blue() * 255);
-            Color muted_color(255, 0, 0);
+            Color muted_color(50, 0, 0);
             auto timer_ratio = 12.0f * id(first_active_timer).seconds_left / max(id(first_active_timer).total_seconds , static_cast<uint32_t>(1));
             uint8_t last_led_on = static_cast<uint8_t>(ceil(timer_ratio)) - 1;
             for (uint8_t i = 0; i < 12; i++) {
